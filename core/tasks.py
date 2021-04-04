@@ -3,6 +3,7 @@ from celery import shared_task
 
 
 # TODO: can be async?
+# @shared_task()
 def all_bucket_objects_task():
 	result = bucket.get_objects()
 	return result

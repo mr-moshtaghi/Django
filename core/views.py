@@ -15,6 +15,9 @@ class BucketHome(IsSuperUserMixin, View):
 
     def get(self, request):
         objects = tasks.all_bucket_objects_task()
+        # objects = tasks.all_bucket_objects_task.delay() async
+        # print('='*100)
+        # print(objects)
         return render(request, self.template_name, {'objects': objects})
 
 
